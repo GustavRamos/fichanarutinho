@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ficha Naruto D20</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>Ficha Naruto D20</strong>
+      <span class="muted">• autosave + cálculos</span>
+    </div>
+
+    <div class="actions">
+      <div id="pageNav" class="actions"></div>
+      <span class="sep"></span>
+
+      <button id="btnToggleLayout" class="btn">Modo layout</button>
+      <button id="btnExportData" class="btn">Exportar dados</button>
+      <label class="btn file">
+        Importar dados
+        <input id="fileImportData" type="file" accept="application/json" />
+      </label>
+
+      <span class="sep"></span>
+
+      <button id="btnExportLayout" class="btn">Exportar layout</button>
+      <label class="btn file">
+        Importar layout
+        <input id="fileImportLayout" type="file" accept="application/json" />
+      </label>
+
+      <span class="sep"></span>
+
+      <button id="btnPrint" class="btn">Imprimir / PDF</button>
+      <button id="btnReset" class="btn danger">Reset</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="sheets"></div>
+
+    <aside class="help">
+      <h3>Campos com cálculo</h3>
+      <ul>
+        <li>No layout JSON, adicione <code>"calc":"sua_formula"</code> e <code>"readonly":true</code>.</li>
+        <li>Variáveis = IDs dos campos (ex.: <code>vigor</code>, <code>level</code>, <code>agilidade_bonus</code>).</li>
+        <li>Funções: <code>floor</code>, <code>ceil</code>, <code>round</code>, <code>min</code>, <code>max</code>, <code>abs</code>.</li>
+      </ul>
+      <details>
+        <summary>Dica</summary>
+        <p class="muted">Para ajustar posições, ative <b>Modo layout</b>, arraste/redimensione e depois exporte o layout.</p>
+      </details>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
